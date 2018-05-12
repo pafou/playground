@@ -1,0 +1,193 @@
+<STYLE>
+	table#tcolonne {
+		font:12px helvetica, arial, sans-serif;
+		text-align: center;
+		padding: 0px;
+		border-spacing: 0px;
+	} 
+	td#tdcolonne {
+	    width: 250pt;
+    	text-align: center;
+		padding: 20px;
+		vertical-align: bottom;
+	} 
+	table#plateforme {
+    	background-color: grey;
+		text-align: center;
+		padding: 20px;
+		border-spacing: 20px;
+	} 
+	th#thplateforme {
+	    background-color: #2F3F61;
+		color: white;
+	    width: 900px;
+    	text-align: center;
+	} 
+	td#tdplateforme {
+	    width: 900px;
+    	text-align: center;
+		padding: 20px;
+		border-spacing: 20px;
+	} 
+	table#tsousplateforme {
+		text-align: center;
+		vertical-align: center;
+		padding: 15px;
+	} 
+	th#thsousplateforme {
+	    width: 800px;
+    	text-align: center;
+	    background-color: #A0A0A0;
+	} 
+	td#tdsousplateforme {
+	    width: 800px;
+    	text-align: center;
+	} 
+	table#tcomposant {
+		text-align: center;
+		vertical-align: center;
+		border-spacing: 5px;
+	} 
+	td#tdcomposant {
+	    background-color: #E4E4E4;
+	    width: 800px;
+    	text-align: center;
+		border-spacing: 2px;
+		padding: 0px;
+	} 
+	table#tcmm {
+		width: 100%;
+		text-align: center;
+		vertical-align: center;
+		padding: 0px;
+		border-spacing: 2px;
+	} 
+	td#tdcmm {
+	    width: 200px;
+	    height: 5pt;
+	    background-color: #E4E4E4;
+    	text-align: center;
+		padding: 1px;
+	} 
+</STYLE>
+
+<FORM>
+<CENTER>
+<TABLE id="tcolonne">
+	<TR>
+	<TMPL_LOOP NAME=Colonne>
+	<TD id="tdcolonne"><!-- num: <TMPL_VAR NAME=num> -->
+  	<TMPL_LOOP NAME=Plateforme>
+		<BR/>
+  		<TABLE id="tplateforme" style="background-color:<TMPL_VAR NAME=color>">
+  		<TR><TH id="thplateforme">
+			<TMPL_VAR NAME=nom_plateforme>
+		</TH></TR>
+			<TMPL_LOOP NAME=SousPlateforme>
+				<TR><TD id="tdplateforme">
+					<TABLE id="tsousplateforme" style="background-color:<TMPL_VAR NAME=color>">
+						<TR>
+							<TH id="thsousplateforme">
+							<TMPL_VAR NAME=nom_sousplateforme>
+							</TH>
+						</TR>
+						<TR><TD id="tdsousplateforme">
+							<TABLE id=tcomposant>
+							<TMPL_LOOP NAME=Composant>
+								<TR>
+								<TD id="tdcomposant"><TMPL_VAR NAME=nom></TD>
+								<TD>
+									<TABLE id="tcmm">
+									<TMPL_IF NAME=creation>
+									<TR>
+										<TD id="tdcmm">creation</TD>
+										<TD>
+											<select name="DTDESC:<TMPL_VAR NAME=nom_plateforme>:<TMPL_VAR NAME=nom_sousplateforme>:<TMPL_VAR NAME=nom>:creation">
+											<TMPL_VAR NAME=values>
+											</select>
+										</TD>
+									</TR>
+									</TMPL_IF>
+									<TMPL_IF NAME=modification>
+									<TR>
+										<TD id="tdcmm">modification</TD>
+										<TD>
+											<select name="DTDESC:<TMPL_VAR NAME=nom_plateforme>:<TMPL_VAR NAME=nom_sousplateforme>:<TMPL_VAR NAME=nom>:modification">
+											<TMPL_VAR NAME=values>
+											</select>
+										</TD>
+									</TR>
+									</TMPL_IF>
+									<TMPL_IF NAME=migration>
+									<TR>
+										<TD id="tdcmm">migration</TD>
+										<TD>
+											<select name="DTDESC:<TMPL_VAR NAME=nom_plateforme>:<TMPL_VAR NAME=nom_sousplateforme>:<TMPL_VAR NAME=nom>:migration">
+											<TMPL_VAR NAME=values>
+											</select>
+										</TD>
+									</TR>
+									</TMPL_IF>
+									</TABLE>
+								</TD>
+								</TR>
+							</TMPL_LOOP>
+							</TABLE>
+						</TD></TR>
+					</TABLE>
+				</TD></TR>
+			</TMPL_LOOP>
+			<TMPL_IF NAME=Composant>
+			<TR><TD id="tdplateforme">
+				<TABLE id="tcomposant">
+							<TMPL_LOOP NAME=Composant>
+								<TR>
+								<TD id="tdcomposant"><TMPL_VAR NAME=nom></TD>
+								<TD>
+									<TABLE id="tcmm">
+									<TMPL_IF NAME=creation>
+									<TR>
+										<TD id="tdcmm">creation</TD>
+										<TD>
+											<select name="DTDESC:<TMPL_VAR NAME=nom_plateforme>:<TMPL_VAR NAME=nom_sousplateforme>:<TMPL_VAR NAME=nom>:creation">
+											<TMPL_VAR NAME=values>
+											</select>
+										</TD>
+									</TR>
+									</TMPL_IF>
+									<TMPL_IF NAME=modification>
+									<TR>
+										<TD id="tdcmm">modification</TD>
+										<TD>
+											<select name="DTDESC:<TMPL_VAR NAME=nom_plateforme>:<TMPL_VAR NAME=nom_sousplateforme>:<TMPL_VAR NAME=nom>:modification">
+											<TMPL_VAR NAME=values>
+											</select>
+										</TD>
+									</TR>
+									</TMPL_IF>
+									<TMPL_IF NAME=migration>
+									<TR>
+										<TD id="tdcmm">migration</TD>
+										<TD>
+											<select name="DTDESC:<TMPL_VAR NAME=nom_plateforme>:<TMPL_VAR NAME=nom_sousplateforme>:<TMPL_VAR NAME=nom>:migration">
+											<TMPL_VAR NAME=values>
+											</select>
+										</TD>
+									</TR>
+									</TMPL_IF>
+									</TABLE>
+								</TD>
+								</TR>
+							</TMPL_LOOP>
+				</TABLE>
+			</TD></TR>
+			</TMPL_IF>
+		</TABLE>
+	</TMPL_LOOP>
+	</TD>
+</TMPL_LOOP>
+</TR>
+</TABLE>
+<input type="submit" value="Submit">
+</CENTER>
+</FORM>

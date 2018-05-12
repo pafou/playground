@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE DescriptionDT [
+<!ELEMENT DescriptionDT (Colonne+)>
+<!ELEMENT Colonne (Plateforme+)>
+<!ATTLIST Colonne 
+	num   (1|2|3|4|5) #REQUIRED>
+<!ELEMENT Plateforme (Composant*|SousPlateforme*)>
+<!ATTLIST Plateforme 
+	nom_plateforme   CDATA #REQUIRED
+	color CDATA #REQUIRED>
+<!ELEMENT SousPlateforme (Composant+)>
+<!ATTLIST SousPlateforme 
+	nom_sousplateforme   CDATA #REQUIRED
+	color CDATA #REQUIRED>
+<!ELEMENT Composant (#PCDATA)>
+<!ATTLIST Composant 
+	nom   CDATA #REQUIRED
+	creation     ( oui | non ) ""
+	modification ( oui | non ) ""
+	migration    ( oui | non ) "">
+]>
+
+<DescriptionDT>
+	<Colonne num="1">
+		<Plateforme nom_plateforme="MSA" color="#89B9FF">
+			<SousPlateforme nom_sousplateforme="AS" color="#2C5189">
+				<Composant nom="WebSphere" creation="oui" modification="oui"/>
+				<Composant nom="Jboss" creation="oui" modification="oui"/>
+				<Composant nom="TomEE" creation="oui" modification="oui"/>
+				<Composant nom="Tomcat" creation="oui" modification="oui"/>
+			</SousPlateforme>
+			<SousPlateforme nom_sousplateforme="DB" color="#2C5189">
+				<Composant nom="PostGreSQL" creation="oui" modification="oui" migration="oui"/>
+				<Composant nom="DB2" creation="oui" modification="oui" migration="oui"/>
+				<Composant nom="Oracle" creation="oui" modification="oui" migration="oui"/>
+			</SousPlateforme>
+			<SousPlateforme nom_sousplateforme="Batch" color="#2C5189">
+				<Composant nom="Unix" creation="oui" modification="oui"/>
+				<Composant nom="Linux" creation="oui" modification="oui"/>
+				<Composant nom="Windows" creation="oui" modification="oui"/>
+			</SousPlateforme>
+		</Plateforme>
+	</Colonne>
+	<Colonne num="2">
+		<Plateforme nom_plateforme="Poste de travail" color="grey">
+				<Composant nom="Code N" creation="oui" modification="oui"/>
+				<Composant nom="Composant poste" creation="oui" modification="oui"/>
+		</Plateforme>
+		<Plateforme nom_plateforme="Portail" color="#3A55FF">
+				<Composant nom="SharePoint" creation="oui" modification="oui"/>
+		</Plateforme>
+		<Plateforme nom_plateforme="BI" color="#8EFFB6">
+				<Composant nom="AS" creation="oui" modification="oui"/>
+				<Composant nom="RS" creation="oui" modification="oui"/>
+				<Composant nom="BO" creation="oui" modification="oui"/>
+		</Plateforme>
+		<Plateforme nom_plateforme="BUS" color="#FAFF8E">
+				<Composant nom="WS Gencom" creation="oui" modification="oui"/>
+				<Composant nom="MQ" creation="oui" modification="oui"/>
+				<Composant nom="Datastage" creation="oui" modification="oui"/>
+				<Composant nom="Genio" creation="oui" modification="oui"/>
+		</Plateforme>
+	</Colonne>
+	<Colonne num="3">
+		<Plateforme nom_plateforme="Documentum" color="#3A55FF">
+				<Composant nom="Application" creation="oui" modification="oui"/>
+				<Composant nom="Content server" creation="oui" modification="oui"/>
+				<Composant nom="Docbase" creation="oui" modification="oui"/>
+		</Plateforme>
+		<Plateforme nom_plateforme="Technique" color="#FFD372">
+				<Composant nom="Streamserve" creation="oui" modification="oui"/>
+				<Composant nom="RRR" creation="oui" modification="oui"/>
+				<Composant nom="Chaine OPS" creation="oui" modification="oui"/>
+				<Composant nom="NAS" creation="oui" modification="oui"/>
+		</Plateforme>
+		<Plateforme nom_plateforme="Admin" color="#88D2FF">
+				<Composant nom="Supervision" creation="oui" modification="oui"/>
+		</Plateforme>
+	</Colonne>
+</DescriptionDT>
