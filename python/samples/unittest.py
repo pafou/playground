@@ -3,6 +3,7 @@
 """Pour tester la fonction unittest"""
 
 
+#unittest
 import unittest
  
 # Le code a tester doit être importable. 
@@ -13,6 +14,7 @@ from pig_classes import *
 # par 'Test' et la classe DOIT heriter de unittest.TestCase.
 
 
+#unittest
 class TestMethodeBonjour(unittest.TestCase):
  
     # Chaque méthode dont le nom commence par 'test_' est un test.
@@ -24,6 +26,7 @@ class TestMethodeBonjour(unittest.TestCase):
         self.assertEqual(element, 'bonjour')
 
 
+#unittest
 class TestClasseClasseScolaire(unittest.TestCase):
  
     # Initialise le test

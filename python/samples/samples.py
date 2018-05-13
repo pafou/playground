@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 
-# CONDITIONS
+#conditions #if 
 a = 5
 b = 12
 if a>0: # Si a est superieur a 0
@@ -19,6 +19,7 @@ else:
     
 annee=1600
 
+#while
 while annee<1634:
     print(annee)
     if annee%4!=0:
@@ -33,6 +34,7 @@ while annee<1634:
             print("annee non muliple de 100 : bissextile")
     annee += 1        
         
+#while
 nb = 7 # On garde la variable contenant le nombre dont on veut la table de multiplication
 i = 0 # C'est notre variable compteur que nous allons incrementer dans la boucle
 
@@ -41,6 +43,7 @@ while i < 10: # Tant que i est strictement inferieure a 10
     i += 1 # On incremente i de 1 a chaque tour de boucle
 
 
+#while #def #table #liste
 def table(nb, maxi):
     i = 0
     while i < maxi: # Tant que i est strictement inferieure a la variable max,
@@ -61,6 +64,7 @@ def tablemax(nb, maxi=10):
 
 help(tablemax)
 
+#fonction #function
 def fonc(a=1, b=2, c=3, d=4, e=5):
     """fonc avec des valeurs par defaut -> c'est genial"""
     print("a =", a, "b =", b, "c =", c, "d =", d, "e =", e)
@@ -68,6 +72,7 @@ def fonc(a=1, b=2, c=3, d=4, e=5):
 help(fonc)
 fonc(b=3)
 
+#fonction #function
 def carre(valeur):
     return valeur * valeur
 print("carre de 3", carre(3))
@@ -76,11 +81,13 @@ ajout = lambda x,y: x+y
 
 print (ajout(2,3))
 
+#modules #from #import
 from mon_package import mon_module
 mon_module.ma_fonction("Yes man t'es un dieu, tu as imprime depuis une fonction dant un module")
 
 help(mon_module)
 
+#json
 import json
 
 mon_fichier = open("fichier.json", "r")
@@ -94,6 +101,7 @@ obj = json.loads(contenu)
 print(repr(obj))
 mon_fichier.close()
 
+#subprocess
 import subprocess  
 
 x = subprocess.Popen(["/Users/pascalfoucher/git/iac/test.bash", "ok"],stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -119,7 +127,7 @@ ma_chaine = """j'aime les string"""
 print (ma_chaine[0:7] + "les cacahuetes")
 print (ma_chaine.upper())
 
-#LISTES et TUPLES
+#listes #tuples
 ma_liste = ["a", "b", "c"]
 print (ma_liste)
 print (ma_liste[2]) # 3eme element de la liste
@@ -174,7 +182,7 @@ afficher("salut les cocos")
 liste_origine = [0, 1, 2, 3, 4, 5]
 print ([nb * nb for nb in liste_origine])
 
-#SORT
+#sort
 inventaire = [
      ("pommes", 22),
      ("melons", 4),
@@ -191,7 +199,7 @@ print (inventaire_inverse)
 inventaire = [(nom_fruit, qtt) for qtt,nom_fruit in sorted(inventaire_inverse, reverse=True)]
 print (inventaire)
 
-#SYNTAXE 
+#syntaxe
 une_liste = []
 un_tuple = ()
 un_dictionnaire = {}
@@ -200,17 +208,17 @@ type(une_liste)
 type(un_tuple)
 type(un_dictionnaire)
 
-#DICTIONNAIRES
+#dictionnaires
 fruits = {"pommes":21, "melons":3, "poires":31}
 for cle, valeur in fruits.items():
     print("La cle {} contient la valeur {}.".format(cle, valeur))
     
-#Transformer un dictionnaire en parametres nommes d'une fonction
+# transformer un dictionnaire en parametres nommes d'une fonction
 
 parametres = {"sep":" >> ", "end":" -\n"}
 print("Voici", "un", "exemple", "d'appel", **parametres)
 
-#FICHIERS
+#fichiers
 import os
 print (os.getcwd())
 
@@ -222,7 +230,7 @@ with open("/tmp/fichier.txt","r") as un_fichier:
     texte = un_fichier.read()
     print (texte)
     
-#PICKLE
+#pickle
 import pickle
 #Enregistrer un objet dans un fichier
 score = {
@@ -241,7 +249,7 @@ with open('/tmp/donnees', 'rb') as fichier:
 print(score_recupere)
 
 
-#:Classes - attributs de classes
+#classes - #attributs de classes
 # les noms de classes sont CamelCase (vs. snake_case)
 class Personne:
     """Classe definissant une personne caracterisee par :
@@ -272,7 +280,7 @@ ma_personne = Personne("Flou")
 
 print(Personne.objets_crees, "objets crees\n") # impression de l'attribut de classe
 
-#: methodes de classe 
+#methodes de #classe 
 class Compteur:
     """Cette classe possede un attribut de classe qui s'incremente a chaque
     fois que l'on cree un objet de ce type"""
@@ -288,7 +296,7 @@ class Compteur:
                 cls.objets_crees))
     combien = classmethod(combien)
     
-#: methodes statiques 
+#methodes #statiques 
 class Test:
     """Une classe de test tout simplement"""
     def afficher():
@@ -298,7 +306,7 @@ class Test:
     afficher = staticmethod(afficher)
     
 
-#: les proprietes
+#proprietes #properties
 # les proprietes permettent de definir des fonctions d'acces aux attributs  (lecture, ecriture, suppression ou help)
 # exemple avec des fonctions d'acces a lieu de residence
 class Gens:
@@ -337,6 +345,7 @@ jean.lieu_residence
 jean.lieu_residence = "Berlin"
 # affichera : Attention, il semble que Jean demenage a Berlin.
 
+#class #json #def #init 
 class MqQueue:
     """MqQueue : objet file MQ caracterisee par :
     - un alias
@@ -370,6 +379,7 @@ mq.env = "VAL"
 mon_json = mq.json_print()
 print(mon_json)
 
+#fichier #file
 mon_fichier = open("/tmp/mq.json", "w") # r=read, w=write, a=append + (option) b=binaire
 mon_fichier.write(mon_json)
 mon_fichier.close()

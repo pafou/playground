@@ -4,7 +4,7 @@ C'est à dire :
 
 * codes simples : codes ne méritant pas un projet à eux seuls, et souvent destinés à être réutilisés dans des projets plus importants.
 * codes exemples et didactiques : code dans lequel on retrouve des exemples simples de manipulation d'objets, de modules, de tests, de docs, de fonctions, de classes...
-* codes cracra : (dit 'playground' : destinés à faire quelques test unitaires)
+* codes cracra : (dits 'playground' : destinés à faire quelques test unitaires)
 
 ## Organisation 
 
@@ -20,6 +20,17 @@ Les codes sont classés ainsi :
 * `pig` contient tous les petits scripts expérimentaux ;
 * sous chaque projet, on retrouve un script généralement dénommé `<projet>.<ext>` ;
 c'est le script principal du projet.
+
+## Un script important
+`hm.py` est un script qui permet de rechercher des exemples de code dans tous les codes.
+
+
+    hm.py -t un_tag
+permettra de chercher des bouts de code encadrés par `#un_tag` et un autre tag.
+
+
+    hm.py -k un_mot_cle
+permettra de chercher des bouts de code qui contiennent le mot clé `un_mot_cle`.
 
 ## Quelques exemples 
 ### `playground/python/samples/`

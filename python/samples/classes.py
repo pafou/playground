@@ -9,6 +9,7 @@ def bonjour():
     '''Return 'bonjour' '''
     return 'bonjour'
 
+#class
 class Eleve:
     """Classe definissant un eleve caracterise par :
     - son nom

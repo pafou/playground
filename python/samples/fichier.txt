@@ -1,0 +1,27 @@
+hello
+ceci est un fichier texte
+avec des chaines de caractères que je 
+
+vais essayer de trapper avec le module re
+
+
+# du texte avec des dièses : # voilà
+
+#tag1 voilà du texte après tag1
+le texte continue
+et là j'ai un tag2
+#fin
+#tag2 du texte
+pour tag2
+
+
+nom='Task1', id=8
+nom='Task2', id=31
+nom='Task3', id=127
+#fin
+
+#tag_de_fin
+Et du texte après 2 sauts 
+de ligne.
+Voilà c'est fini.
+#fin
