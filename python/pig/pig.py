@@ -40,4 +40,34 @@
         python  tmps.py -e dev -a delete -k Jean
     deletes file Maurice
 """
+from __builtin__ import False
 
+# for RORO
+# full initialisation
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+list_alphabet = list(alphabet)
+
+max_size = int(raw_input("Give max size: "))
+
+dict_alphabet = dict()
+
+num = 1
+for letter in list_alphabet:
+    dict_alphabet[letter] = num
+    if (num == max_size):
+        break
+    num += 1
+
+print (dict_alphabet)
+
+while True:
+    user_choice = raw_input("Give a letter: ")
+    if (user_choice in dict_alphabet):
+        print ("Good letter")
+        ind = dict_alphabet[user_choice]
+        print "Letter: {0} ; Index: {1}".format(user_choice, ind)    
+    elif (user_choice == "q"):
+        print ("Bye kid")
+        break
+    else:
+        print ("Shoot again!")
