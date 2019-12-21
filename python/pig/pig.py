@@ -60,6 +60,7 @@ for letter in list_alphabet:
 
 print (dict_alphabet)
 
+# while loop
 while True:
     user_choice = raw_input("Give a letter: ")
     if (user_choice in dict_alphabet):
